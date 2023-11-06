@@ -1,3 +1,26 @@
+function Header() {
+  return <h1>hello</h1>;
+}
+
+function App() {
+  const urls = [
+    "images/pic1.jpg",
+    "images/pic2.jpg",
+    "images/pic3.jpg",
+    "images/pic4.jpg",
+    "images/pic5.jpg",
+ ];
+ return (
+   <>
+     {urls.map((url) => {
+       return (
+         <img key={url} src={url} />
+       );
+     })}
+   </>
+ );
+}
+
 export default function App() {
     return (
       <>
