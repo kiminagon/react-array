@@ -1,17 +1,52 @@
 export default function App() {
+    const images = [
+        {
+            src: "images/pic1.jpg",
+            alt: "Closeup of a human eye"
+        },
+        {
+            src: "images/pic2.jpg",
+            alt: "Rock that looks like a wave"
+        },
+        {
+            src: "images/pic3.jpg",
+            alt: "Purple and white pansies"
+        },
+        {
+            src: "images/pic4.jpg",
+            alt: "Section of wall from a pharoah's tomb"
+        },
+        {
+            src: "images/pic5.jpg",
+            alt: "Large moth on a leaf"
+        }
+    ];
+
     return (
-      <>
-        <h1>Image gallery example</h1>
-        <div className="full-img">
-          <img
-            className="displayed-img"
-            src="images/pic1.jpg"
-            alt="Closeup of a human eye"
-          />
-          <div className="overlay"></div>
-          <button className="dark">Darken</button>
-        </div>
-        <div className="thumb-bar"></div>
-      </>
-    );
-  }
+        <>
+          <h1>Image gallery example</h1>
+          <div className="full-img">
+            <img
+              className="displayed-img"
+              src={images[0].src}
+              alt={images[0].alt}
+            />
+            <div className="overlay"></div>
+            <button className="dark">Darken</button>
+          </div>
+          <div className="thumb-bar">
+            {images.map((image, index) => (
+              <img
+                key={index}
+                src={image.src}
+                alt={image.alt}
+                onClick={() => {
+                  // 画像がクリックされたときの処理を追加することができます
+                  // 例: 画像を切り替える
+                }}
+              />
+            ))}
+          </div>
+        </>
+      );
+    }
